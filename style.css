@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #fdf1d6, #fcefdc);
+  color: #333;
+  text-align: center;
+}
+
+
+/* Encabezado */
+.header {
+  padding: 40px 20px;
+  background: linear-gradient(to right, #fdf6ec, #e0f2f1);
+  border-bottom: 2px solid #c8e6c9;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #2e7d32;
+}
+
+.slogan {
+  font-style: italic;
+  color: #8bc34a;
+  font-size: 1.2em;
+}
+
+/* Sección Sobre Nosotros */
+.about {
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 30px auto;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: slideUp 1.2s ease;
+}
+
+.about h2 {
+  color: #388e3c;
+}
+
+/* Buscador */
+.search-container {
+  margin: 20px 0;
+}
+
+#search {
+  padding: 10px;
+  width: 60%;
+  border: 2px solid #c8e6c9;
+  border-radius: 25px;
+  outline: none;
+  transition: 0.3s;
+}
+
+#search:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 8px rgba(102,187,106,0.3);
+}
+
+/* Servicios */
+.services {
+  padding: 40px 20px;
+  background-color: #e8f5e9;
+}
+
+.services h2 {
+  color: #2e7d32;
+  margin-bottom: 30px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.service-card h3 {
+  color: #388e3c;
+}
+
+/* Pie de página */
+.footer {
+  background-color: #c8e6c9;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #2e7d32;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  animation: slideInCenter 2s ease forwards; /* Animación */
+}
+
+@keyframes slideInCenter {
+  from {
+    transform: translateX(-100%) scale(0.8); /* Empieza desde la izquierda */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1); /* Termina centrado */
+    opacity: 1;
+  }
+}

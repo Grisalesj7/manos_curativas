@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - Manos Curativas</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fdf1d6, #fcefdc);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #fdf6ec, #e0f2f1);
+      border-bottom: 2px solid #c8e6c9;
+    }
+
+    header img {
+      width: 150px;
+      animation: slideInCenter 2s ease forwards;
+    }
+
+    @keyframes slideInCenter {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    header h1 {
+      color: #2e7d32;
+      font-size: 2.2em;
+      margin: 10px 0;
+    }
+
+    header p {
+      font-style: italic;
+      color: #8bc34a;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2e7d32;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #66bb6a;
+      transform: scale(1.1);
+    }
+
+    .productos {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .productos h2 {
+      color: #2e7d32;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .product-card .price {
+      font-weight: bold;
+      color: #2e7d32;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #c8e6c9;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #2e7d32;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: #2e7d32;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #388e3c;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/manos.png" alt="Logo Manos Curativas">
+    <h1>Manos Curativas</h1>
+    <p>Belleza que sana, energía que ilumina</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="productos.html">Productos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="img/producto1.jpg" alt="Suplemento Energético">
+        <h3>Suplemento Energético</h3>
+        <p>Potencia tu vitalidad con ingredientes naturales.</p>
+        <p class="price">$39.000</p>
+      </div>
+      <div class="product-card">
+        <img src="img/producto2.jpg" alt="Aceite Esencial Relajante">
+        <h3>Aceite Esencial Relajante</h3>
+        <p>Equilibra tu energía y calma tu mente.</p>
+        <p class="price">$25.000</p>
+      </div>
+      <div class="product-card">
+        <img src="img/manos.png" alt="Crema Facial Iluminadora">
+        <h3>Crema Facial Iluminadora</h3>
+        <p>Devuelve luminosidad y frescura a tu piel.</p>
+        <p class="price">$45.000</p>
+      </div>
+      <div class="product-card">
+        <img src="img/manos.png" alt="Infusión Detox">
+        <h3>Infusión Detox</h3>
+        <p>Purifica tu cuerpo con hierbas naturales.</p>
+        <p class="price">$19.000</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Manos Curativas | Todos los derechos reservados</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/manoscurativas" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573117656134?text=Hola%20Manuela,%20como%20estas,%20estoy%20interesado%20en%20uno%20de%20tus%20productos,%20me%20puedes%20asesorar" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://facebook.com/manoscurativas" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+</body>
+</html>

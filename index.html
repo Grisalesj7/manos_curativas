@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Curativas | Spa & Bienestar Espiritual</title>
+    
+    <!-- Fuentes y Estilos Externos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #8bc34a;
+            --accent-gold: #d4af37;
+            --bg-cream: #fdfaf5;
+            --soft-white: rgba(255, 255, 255, 0.9);
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-cream);
+            color: #444;
+            overflow-x: hidden;
+        }
+
+        /* Fondo Decorativo */
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/manos.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 40%;
+            opacity: 0.05;
+            z-index: -1;
+            filter: grayscale(100%);
+        }
+
+        /* --- NAVEGACIÓN --- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .brand h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--primary-green);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .navbar a:hover {
+            color: var(--primary-green);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-main {
+            padding: 15px 40px;
+            background: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            background: var(--light-green);
+        }
+
+        /* --- SERVICIOS --- */
+        .section-title {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 10%;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--light-green);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* --- FORMULARIO --- */
+        .booking-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto 100px;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .booking-info {
+            flex: 1;
+            background: var(--primary-green);
+            color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .formulario-wrapper {
+            flex: 1.2;
+            padding: 60px;
+        }
+
+        .formulario label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .formulario input, .formulario select, .formulario textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: inherit;
+        }
+
+        .formulario button {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .formulario button:hover {
+            background: #1b5e20;
+        }
+
+        /* --- TESTIMONIOS --- */
+        .testimonials {
+            background: #f1f8e9;
+            padding: 100px 10%;
+        }
+
+        .testimonial-item {
+            font-style: italic;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #333;
+            color: #eee;
+            padding: 60px 10% 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--light-green);
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--light-green);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h2 { font-size: 2.5rem; }
+            .navbar { display: none; }
+            .booking-container { margin: 20px; }
+            .booking-info { padding: 30px; }
+            .formulario-wrapper { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <header class="header">
+        <div class="brand">
+            <img src="img/manos.png" alt="Logo" class="logo-img">
+            <h1>Manos Curativas</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Citas</a></li>
+            </ul>
+        </nav>
+        <a href="#contacto" class="btn-main" style="padding: 10px 20px; font-size: 0.8rem;">Agendar Ahora</a>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content" data-aos="fade-up">
+            <p class="slogan" style="text-transform: uppercase; letter-spacing: 3px; color: var(--primary-green); font-weight: bold;">Energía que Transforma</p>
+            <h2>Belleza que Sana</h2>
+            <p>Descubre un refugio donde el cuidado facial se encuentra con el equilibrio espiritual. Un espacio diseñado para tu paz mental y bienestar físico.</p>
+            <a href="#servicios" class="btn-main">Explorar Tratamientos</a>
+        </div>
+    </section>
+
+    <section class="section-title" id="servicios" data-aos="fade-up">
+        <p>NUESTROS TRATAMIENTOS</p>
+        <h2>Servicios Holísticos</h2>
+    </section>
+
+    <div class="services-grid">
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-spa"></i>
+            <h3>Facial Energizante</h3>
+            <p>Limpieza profunda con aceites esenciales y masaje craneal para renovar tu cutis.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$50.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-hands-holding-circle"></i>
+            <h3>Masaje de Reiki</h3>
+            <p>Alineación de chakras y liberación de estrés mediante energía vital universal.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$70.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            <h3>Iluminación Facial</h3>
+            <p>Tratamiento hidratante con cuarzos para dar un brillo natural y saludable a tu piel.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$45.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Pedicura Energética</h3>
+            <p>Cuidado de pies con sales marinas y reflexología para liberar tensiones corporales.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$35.000</span>
+        </div>
+    </div>
+
+    <section class="section-title" id="contacto" data-aos="fade-up">
+        <h2>Reserva tu Momento</h2>
+    </section>
+
+    <div class="booking-container" data-aos="fade-up">
+        <div class="booking-info">
+            <h3>¿Por qué elegirnos?</h3>
+            <p><i class="fas fa-check-circle"></i> Atención 100% personalizada.</p>
+            <p><i class="fas fa-check-circle"></i> Productos orgánicos y naturales.</p>
+            <p><i class="fas fa-check-circle"></i> Ambiente tranquilo y seguro.</p>
+            <div style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                <p><i class="fas fa-location-dot"></i> Medellín, Colombia</p>
+                <p><i class="fas fa-clock"></i> Lun - Sáb: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="formulario-wrapper">
+            <form id="whatsappForm" class="formulario">
+                <label>Tu Nombre</label>
+                <input type="text" id="nombre" required placeholder="Ej: Maria García">
+
+                <label>Servicio Deseado</label>
+                <select id="servicio" required onchange="actualizarPrecio()">
+                    <option value="">-- Elige un servicio --</option>
+                    <option value="Facial Energizante">Facial Energizante</option>
+                    <option value="Masaje de Reiki">Masaje de Reiki</option>
+                    <option value="Iluminación Facial">Iluminación Facial</option>
+                    <option value="Pedicura Energética">Pedicura Energética</option>
+                </select>
+
+                <label>Precio Estimado</label>
+                <input type="text" id="precio" readonly placeholder="Total a pagar" style="background: #f9f9f9; color: var(--primary-green); font-weight: bold;">
+
+                <label>Notas o Requerimientos Especiales</label>
+                <textarea id="pedido" rows="3" placeholder="¿Tienes alguna alergia o preferencia?"></textarea>
+
+                <button type="submit">Agendar por WhatsApp <i class="fab fa-whatsapp"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <section class="testimonials" data-aos="fade-in">
+        <div class="testimonial-item">
+            <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--light-green); margin-bottom: 20px;"></i>
+            <p style="font-size: 1.4rem;">"La experiencia en Manos Curativas fue transformadora. No solo mi piel luce mejor, sino que salí con una paz mental increíble."</p>
+            <p><strong>- Juliana Restrepo</strong></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Manos Curativas</h2>
+                <p>Belleza que sana, energía que ilumina.</p>
+            </div>
+            <div>
+                <h4>Enlaces</h4>
+                <p><a href="#inicio" style="color: #aaa; text-decoration: none;">Inicio</a></p>
+                <p><a href="#servicios" style="color: #aaa; text-decoration: none;">Servicios</a></p>
+            </div>
+            <div class="social-links">
+                <h4>Síguenos</h4>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.8rem; color: #888;">
+            <p>© 2026 Manos Curativas. Todos los derechos reservados. Diseñado para la armonía.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inicializar animaciones
+        AOS.init({ duration: 1000, once: true });
+
+        // Lógica de Precios
+        const preciosServicios = {
+            "Facial Energizante": "$50.000",
+            "Masaje de Reiki": "$70.000",
+            "Iluminación Facial": "$45.000",
+            "Pedicura Energética": "$35.000"
+        };
+
+        function actualizarPrecio() {
+            const servicio = document.getElementById("servicio").value;
+            const campoPrecio = document.getElementById("precio");
+            campoPrecio.value = preciosServicios[servicio] || "";
+        }
+
+        // WhatsApp Logic
+        document.getElementById("whatsappForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const servicio = document.getElementById("servicio").value;
+            const pedido = document.getElementById("pedido").value || "Sin notas adicionales";
+            const precio = document.getElementById("precio").value;
+
+            const mensaje = `✨ *Nueva Cita - Manos Curativas* ✨\n\n` +
+                            `👤 *Cliente:* ${nombre}\n` +
+                            `💆 *Servicio:* ${servicio}\n` +
+                            `💰 *Precio:* ${precio}\n` +
+                            `📝 *Notas:* ${pedido}\n\n` +
+                            `¿Me confirmas disponibilidad?`;
+
+            const url = `https://wa.me/57300000000?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, "_blank");
+        });
+    </script>
+</body>
+</html>

@@ -304,6 +304,56 @@
             .booking-info { padding: 30px; }
             .formulario-wrapper { padding: 30px; }
         }
+
+        .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    color: var(--primary-green);
+    font-size: 24px;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 18px;
+}
+
+.service-card span {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
     </style>
 </head>
 <body>
@@ -336,35 +386,89 @@
 
     <section class="section-title" id="servicios" data-aos="fade-up">
         <p>NUESTROS TRATAMIENTOS</p>
-        <h2>Servicios Holísticos</h2>
+        <h2>Servicios Faciales y Corporales</h2>
     </section>
 
     <div class="services-grid">
         <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
             <i class="fas fa-spa"></i>
-            <h3>Facial Energizante</h3>
-            <p>Limpieza profunda con aceites esenciales y masaje craneal para renovar tu cutis.</p>
-            <span style="color: var(--primary-green); font-weight: bold;">$50.000</span>
+            <h3>Limpieza Facial</h3>
+            <p>Remueve celulas muertas, reduce el sebo e hidrata tu piel.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$60.000</span>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
             <i class="fas fa-hands-holding-circle"></i>
-            <h3>Masaje de Reiki</h3>
-            <p>Alineación de chakras y liberación de estrés mediante energía vital universal.</p>
-            <span style="color: var(--primary-green); font-weight: bold;">$70.000</span>
+            <h3>Limpieza Facial Profunda</h3>
+            <p>Cumple con los beneficios de la superficial; Mejora la textura y oxigenacion de la piel, incluyendo ampolleta hidratante, mascarilla segun la necesidad, aparatologia, esferas frias y masaje facial con Gua Sha y aromaterapia para brindarte una mejor experiencia.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$80.000</span>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
             <i class="fas fa-wand-magic-sparkles"></i>
             <h3>Iluminación Facial</h3>
-            <p>Tratamiento hidratante con cuarzos para dar un brillo natural y saludable a tu piel.</p>
-            <span style="color: var(--primary-green); font-weight: bold;">$45.000</span>
+            <p>Su beneficio es darle mas brillo, ayuda a mejorar el tono desigual y manchas leves, hidrata y tambien disminuye el aspecto opaco de la piel.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$50.000</span>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
             <i class="fas fa-leaf"></i>
-            <h3>Pedicura Energética</h3>
-            <p>Cuidado de pies con sales marinas y reflexología para liberar tensiones corporales.</p>
+            <h3>Tratamiento Anti-Edad</h3>
+            <p>Mejora la elasticidad y firmeza de la piel. Ayuda a suavizar lineas finas y arrugas, estimula produccion del colageno y elastina, aporta hidratacion profunda e iluminosidad y lo mejor previene el envejecimiento prematuro.</p>
             <span style="color: var(--primary-green); font-weight: bold;">$35.000</span>
         </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Tratamiento Anti-Acne</h3>
+            <p>Ayuda a disminuir granitos y brote activo, reduce marcas y manchas causadas por el acne, desinflama y calma la piel irritada, limpia profundamente los poros, controla el exceso de grasa en la piel</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$80.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Alta Hidratacion</h3>
+            <p>Aporta luminosidad y efecto "piel glow", disminuye la resequedad, ayuda prevenir lineas de expresion prematuras y favorece una mejor absorcion de los productos faciales.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$60.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Dermapen</h3>
+            <p>El Microneedling es un tratamiento que ayuda a disminuir cicatrices de acne y marcas, simula la produccion de colageno y elastina, aporta efecto rejuvenecedor, favorece la absorcion de activos y vitaminas</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$120.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Dermapen en ojeras</h3>
+            <p>Disminuye lineas finas y arrugas debajo de los ojos, estimula la regeneracion celular, ayuda a disminuir ojeras oscuras y aspecto cansado, favorece la circulacion en la zona.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$100.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Baby lips</h3>
+            <p>Hidratacion profunda y reparacion de labios resecos, una apariencia mas luminosa y natural.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$50.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Masaje de Relajacion</h3>
+            <p>Reduce el estres y la ansiedad, disminuye la tension muscular, favorece la circulacion, ayuda a mejorar el descanso y el sueño, incluye aromaterapia. Duracion (1H)</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$70.000</span>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3>Masaje de Relajacion Premium</h3>
+            <p>El masaje premium incluye, armonizacion del espacio y piedras volcanicas, lo cual benefician a relajar profundamente el cuerpo, musculos tensos y contracturados, ayudan a aliviar dolores musculares y fatiga.</p>
+            <span style="color: var(--primary-green); font-weight: bold;">$100.000</span>
+        </div>
     </div>
+
+    <p style="
+    text-align: center;
+    color: #2e7d32;
+    font-size: 38px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-top: 40px;
+">
+    Permite que tu cuerpo descanse, tu mente se calme y tu energía vuelva a fluir en armonía
+</p>
 
     <section class="section-title" id="contacto" data-aos="fade-up">
         <h2>Reserva tu Momento</h2>
@@ -374,11 +478,12 @@
         <div class="booking-info">
             <h3>¿Por qué elegirnos?</h3>
             <p><i class="fas fa-check-circle"></i> Atención 100% personalizada.</p>
-            <p><i class="fas fa-check-circle"></i> Productos orgánicos y naturales.</p>
+            <p><i class="fas fa-check-circle"></i> Productos certificados.</p>
             <p><i class="fas fa-check-circle"></i> Ambiente tranquilo y seguro.</p>
             <div style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
                 <p><i class="fas fa-location-dot"></i> Medellín, Colombia</p>
-                <p><i class="fas fa-clock"></i> Lun - Sáb: 9:00 AM - 7:00 PM</p>
+                <p><i class="fas fa-location-dot"></i>Calle 54 # 40-58</p>
+                <p><i class="fas fa-clock"></i> Lun - Sáb: 11:00 AM - 7:00 PM</p>
             </div>
         </div>
         <div class="formulario-wrapper">
@@ -389,8 +494,8 @@
                 <label>Servicio Deseado</label>
                 <select id="servicio" required onchange="actualizarPrecio()">
                     <option value="">-- Elige un servicio --</option>
-                    <option value="Facial Energizante">Facial Energizante</option>
-                    <option value="Masaje de Reiki">Masaje de Reiki</option>
+                    <option value="Limpieza Facial">Limpieza Facial</option>
+                    <option value="Limpieza Facial Profunda">Limpieza Facial Profunda</option>
                     <option value="Iluminación Facial">Iluminación Facial</option>
                     <option value="Pedicura Energética">Pedicura Energética</option>
                 </select>
@@ -427,7 +532,7 @@
             </div>
             <div class="social-links">
                 <h4>Síguenos</h4>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
@@ -472,7 +577,7 @@
                             `📝 *Notas:* ${pedido}\n\n` +
                             `¿Me confirmas disponibilidad?`;
 
-            const url = `https://wa.me/57000000000?text=${encodeURIComponent(mensaje)}`;
+            const url = `https://wa.me/573117656134?text=${encodeURIComponent(mensaje)}`;
             window.open(url, "_blank");
         });
     </script>
